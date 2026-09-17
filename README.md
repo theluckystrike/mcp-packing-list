@@ -4,9 +4,13 @@
 
 **MCP server for packing slips and packing lists: cartons, contents, weights, chargeable weight and what is still to pack.** Packing slips that carry no prices: what is in each carton, what it weighs, and what is still to pack.
 
-Works with Claude Desktop, Claude Code, Cursor and any Model Context Protocol client. Runs on your own machine: this one has no hosted endpoint, so install it from the bundle or from source.
+Works with Claude Desktop, Claude Code, Cursor and any Model Context Protocol client. Runs on your own machine, or hosted with no install.
 
 ## Install
+
+**Hosted, nothing to install.** Get a token from <https://mcp.zovo.one/mcp/connect> (the connect page) or <https://mcp.zovo.one/mcp/token> (the same token as JSON); a free anonymous one is issued on the spot and a Pro key works the same way. Then point an MCP client at `https://mcp.zovo.one/mcp/packing-list` over streamable-http and send the token as `Authorization: Bearer <token>`.
+
+If your client cannot set headers, put the token in the path instead: `https://mcp.zovo.one/mcp/packing-list/t/<token>`. Both forms work. The bare URL with no token answers 401 on `tools/call`, so the token is not optional.
 
 **Claude Desktop, one click.** Download `packing-list.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it.
 
@@ -33,10 +37,13 @@ Then point your client at the built entry point:
 
 > `@theluckystrike/mcp-packing-list` is **not published on npm yet**, so an `npx -y @theluckystrike/mcp-packing-list` command will fail. The three paths above are the working ones and each is exercised by CI.
 
+![packing-list demo](https://raw.githubusercontent.com/theluckystrike/mcp-servers/main/assets/demo-packing-list.gif)
+
 Read-only mirror of [mcp-servers/servers/packing-list](https://github.com/theluckystrike/mcp-servers/tree/main/servers/packing-list). See [MIRROR.md](MIRROR.md).
 
 <!-- mirror-seo:end -->
 
+**In the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.theluckystrike%2Fpacking-list/versions/latest)** (`io.github.theluckystrike/packing-list`).
 The packing slip for a shipment, and the answer to the only two questions anybody asks
 while packing one: what is in which box, and what is still to pack. A packing list is
 raised against an order you name, the lines that order says should ship are declared on
