@@ -45,6 +45,8 @@ Read-only mirror of [mcp-servers/servers/packing-list](https://github.com/theluc
 
 <!-- mirror-seo:end -->
 
+[![theluckystrike/mcp-packing-list MCP server](https://glama.ai/mcp/servers/theluckystrike/mcp-packing-list/badges/score.svg)](https://glama.ai/mcp/servers/theluckystrike/mcp-packing-list)
+
 **In the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.theluckystrike%2Fpacking-list/versions/latest)** (`io.github.theluckystrike/packing-list`).
 The packing slip for a shipment, and the answer to the only two questions anybody asks
 while packing one: what is in which box, and what is still to pack. A packing list is
@@ -54,7 +56,7 @@ cartons one call at a time. `packing_shortfall` then reports every line as short
 over-packed, or packed and not on the order at all. `carton_report` gives the tare, net,
 gross, volume, volumetric and chargeable weight per carton and for the shipment.
 
-**The slip carries no prices.** That is not a simplification, it is what the document is
+That is not a simplification, it is what the document is
 for: it travels inside the box, and the consignee's warehouse is not the party that sees
 what the goods cost. The invoice against the same order is a different document and lives
 in `@theluckystrike/mcp-invoice`. There is no money arithmetic in this server at all, and a
@@ -87,7 +89,7 @@ Two refusals matter here and both are deliberate:
 
 ## Install
 
-**One-click (.mcpb):** download `packing-list.mcpb` from the latest release and double-click
+One-click (.mcpb): download `packing-list.mcpb` from the latest release and double-click
 it in Claude Desktop: https://github.com/theluckystrike/mcp-servers/releases/latest
 
 npm publish for `@theluckystrike/mcp-packing-list` is pending, so the `npx` line below
@@ -156,7 +158,7 @@ The cap is on shipments in flight, not on knowing what is in a box. Marking a li
 or cancelling it frees its slot, and so does deleting a draft, so a free user can always get
 back under the limit without a key.
 
-**Get Pro:** https://mcp.zovo.one/buy/packing-list (one-time), or all servers for one price
+Get Pro: https://mcp.zovo.one/buy/packing-list (one-time), or all servers for one price
 at https://mcp.zovo.one/buy/bundle
 
 ## Privacy
@@ -168,3 +170,9 @@ own is the shared business profile, for the name and address at the top of the s
 never writes to it.
 
 Built by [theluckystrike](https://github.com/theluckystrike). Support: support@zovo.one
+
+## Use these docs as an MCP server
+
+Any MCP client (Claude, Cursor, Windsurf, VS Code) can read this repository's documentation directly via GitMCP — no install:
+
+- Docs MCP URL: https://gitmcp.io/theluckystrike/mcp-packing-list
